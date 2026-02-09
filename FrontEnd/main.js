@@ -257,9 +257,8 @@
   setApiBase(API_BASE || inferDefaultApi());
   router();
 
-  function inferDefaultApi() {
-    const loc = window.location;
-    // Backend monta rutas en '/', y pelis.routes define '/pelis'
-    return `${loc.protocol}//${loc.hostname}:3000/pelis`;
-  }
+function inferDefaultApi() {
+  return 'https://harrypotterb.onrender.com/pelis';
+}
+
 })();

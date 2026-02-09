@@ -1,5 +1,7 @@
 import { Peliculas } from "../models/model.js";
 
+
+
 export const getPeliculas = async (req, res) => {
     const peliculas = await Peliculas.findAll()
     res.send(peliculas)
