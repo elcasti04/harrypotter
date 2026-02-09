@@ -67,6 +67,10 @@ header .env {
 header input {
   width: 320px;
 }
+footer {
+  align-items: center;
+  text-align: center;
+}
 
 /* ================= LAYOUT ================= */
 main {
