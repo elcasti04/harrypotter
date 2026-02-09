@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0e19;
+  --panel: #121a2b;
+  --muted: #93a4c3;
+  --text: #e8eef9;
+  --accent: #6ab0ff;
+  --accent-2: #8bd17c;
+  --danger: #ff6b6b;
+  --border: #1f2c44;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.25);
+  --shadow-md: 0 12px 32px rgba(0,0,0,.35);
+  --shadow-focus: 0 0 0 3px rgba(106,176,255,.25);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+  background:
+    linear-gradient(
+      rgba(10,14,25,.88),
+      rgba(10,14,25,.88)
+    ),
+    url('https://www.lifeboxset.com/wp-content/uploads/2014/07/harry-potter-lifeboxset.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(10,14,25,.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+header .env {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header input {
+  width: 320px;
+}
+
+/* ================= LAYOUT ================= */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 18px;
+}
+
+/* ================= PANELS ================= */
+.panel {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+
+.panel h2 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #dfe8ff;
+}
+
+/* ================= CONTROLS ================= */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+/* ================= LIST & CARDS ================= */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(106,176,255,.6);
+  box-shadow: var(--shadow-md);
+}
+
+.card-body {
+  padding: 14px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin: 0;
+  font-size: 14px;
+  color: #cfe0ff;
+}
+
+.card-actions {
+  display: none;
+}
+
+/* ================= FORMS ================= */
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+label {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .25px;
+}
+
+input,
+textarea,
+button {
+  background: #0d1422;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6e84a6;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-focus);
+}
+
+/* ================= BUTTONS ================= */
+button {
+  cursor: pointer;
+  font-weight: 500;
+  background: linear-gradient(180deg, #132041, #0e1833);
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+button.secondary {
+  background: transparent;
+}
+
+button.danger {
+  background: linear-gradient(180deg, #3a1b1f, #241214);
+  border-color: #5e2a2a;
+  color: #ffd1d1;
+}
+
+button.danger:hover {
+  background: linear-gradient(180deg, #4a2227, #2e171a);
+}
+
+/* ================= TEXT ================= */
+.muted {
+  color: var(--muted);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  header input {
+    width: 100%;
+  }
+}
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-bottom: 1px solid var(--border);
+}
+/* OCULTAR PANEL "CREAR PELÍCULA" */
+#pelisForm,
+section.panel:nth-of-type(2) {
+  display: none !important;
+}
+

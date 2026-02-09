@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harry Potter Pelis - Frontend</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Harry Potter - Películas</h1>
+    <div class="env">
+      <label>Backend API URL</label>
+      <input id="apiBaseUrl" type="text" placeholder="http://localhost:3000/pelis" />
+      <button id="saveApiUrl">Guardar</button>
+      <small id="apiStatus" class="muted"></small>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Listado</h2>
+      <div class="controls">
+        <input id="searchInput" type="search" placeholder="Buscar por nombre..." />
+        <button id="refreshBtn">Refrescar</button>
+      </div>
+      <div id="listContainer" class="list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Crear</h2>
+      <form id="pelisForm">
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input id="name" required />
+        </div>
+        <div class="field">
+          <label for="info">Info</label>
+          <textarea id="info" rows="3" placeholder="Sinopsis o descripción"></textarea>
+        </div>
+        <div class="field">
+          <label for="url">URL</label>
+          <input id="url" type="url" placeholder="https://..." />
+        </div>
+        <div class="field">
+          <label for="image">Imagen</label>
+          <input id="image" type="url" placeholder="https://.../poster.jpg" />
+        </div>
+        <div class="actions">
+          <button type="submit" id="saveBtn">Guardar</button>
+          <button type="button" id="resetBtn" class="secondary">Limpiar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <template id="pelisCardTmpl">
+    <div class="card">
+      <img class="card-img" alt="" />
+      <div class="card-body">
+        <div class="card-title"></div>
+        <div class="card-subtitle"></div>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </template>
+
+  <footer>
+    <small>Frontend simple para el backend de Pelis</small>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
