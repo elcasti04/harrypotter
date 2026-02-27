@@ -2,6 +2,10 @@ import { DataTypes } from 'sequelize'
 import db from '../db/conect.js'
 
 export const Peliculas = db.define('peliculas',{
+    saga: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     name: {
         type: DataTypes.STRING,
         allowNull: false
