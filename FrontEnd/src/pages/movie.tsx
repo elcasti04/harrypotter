@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getMovieById } from '../service/api';
-import type { Movie } from '../types/movie';
+import type { MovieType } from '../types/movie';
 
 function Movie() {
 	const { id } = useParams();
 	const navigate = useNavigate();
-	const [movie, setMovie] = useState<Movie | null>(null);
+	const [movie, setMovie] = useState<MovieType | null>(null);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [error, setError] = useState<string | null>(null);
 
