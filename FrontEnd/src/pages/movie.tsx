@@ -81,7 +81,7 @@ function Movie() {
 				<div className="movie-actions">
 					<a
 						href={movie.url}
-						target="_blank"
+						target="_self"
 						rel="noopener noreferrer"
 						className="btn btn-primary"
 						style={{ marginTop: '20px' }}
