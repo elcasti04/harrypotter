@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getMoviesBySaga } from '../service/api';
-import type { Movie } from '../types/movie';
+import type { MovieType } from '../types/movie';
 
 function Saga() {
 	const { name } = useParams();
 	const navigate = useNavigate();
-	const [movies, setMovies] = useState<Movie[]>([]);
+	const [movies, setMovies] = useState<MovieType[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
 
 	useEffect(() => {

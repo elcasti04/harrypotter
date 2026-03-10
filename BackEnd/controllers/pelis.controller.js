@@ -11,16 +11,13 @@ export const getHpPelis = async (req, res) => {
         const { saga } = req.params
         console.log("Buscando saga:", saga);
 
-        // Normalizar el parámetro de búsqueda
         const sagaNormalized = saga.toLowerCase().replace("-", " ").replace("-", "");
 
-        // Obtener todas las películas y filtrar en memoria
         const todasLasPeliculas = await Peliculas.findAll();
 
         const peliculasFiltradas = todasLasPeliculas.filter(peli => {
             const sagaDB = peli.saga.toLowerCase().replace("-", " ").replace("-", "");
 
-            // Coincidencia exacta o parcial más precisa
             return sagaDB === sagaNormalized ||
                    sagaDB.includes(sagaNormalized) ||
                    sagaNormalized.includes(sagaDB);
