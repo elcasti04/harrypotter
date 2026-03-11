@@ -17,7 +17,7 @@ function Home() {
           style={{ maxWidth: "300px" }}
         >
           <img 
-            src="https://m.media-amazon.com/images/I/81YOuOGFCJL.jpg" 
+            src="https://th.bing.com/th/id/OIP.JOb1UckxGS2CitB5_PW-3QHaFj?w=206&h=180&c=7&r=0&o=7&pid=1.7&rm=3" 
             alt="Harry Potter" 
           />
           <div className="content">
@@ -34,7 +34,7 @@ function Home() {
           style={{ maxWidth: "300px" }}
         >
           <img 
-            src="https://cdn.milenio.com/uploads/media/2022/10/31/crepusculo-especial.jpg" 
+            src="https://th.bing.com/th?id=OIF.%2fD387IoJoC1u8WV2SsFgXQ&w=270&h=180&c=7&r=0&o=7&pid=1.7&rm=3" 
             alt="Crepúsculo" 
           />
           <div className="content">
